@@ -1,6 +1,12 @@
 # React 18 HTML Hydration Debugging
 
-This is a fork of https://github.com/ilyaGurevich/vite-typescript-ssr-react
+This is a fork of https://github.com/ilyaGurevich/vite-typescript-ssr-react.
+
+The issue that we're dealing with: https://github.com/facebook/react/issues/27848.
+
+## Requirements
+
+You'll need to run Node 19.
 
 ## Development
 
