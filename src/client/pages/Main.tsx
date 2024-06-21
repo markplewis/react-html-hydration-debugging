@@ -1,16 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 const htmlString = `
   <style>
-    #server-test { padding: 8px; border: 1px solid black; }
+    #test { padding: 8px; border: 1px solid black; }
+    .client { background-color: orangered; }
+    .server { background-color: lightblue; }
   </style>
 
-  <div id="server-test">server</div>
+  <div id="test" class="server">server</div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const serverTestElement = document.getElementById("server-test");
-      serverTestElement.textContent = "client";
+      const el = document.getElementById("test");
+      el.classList.remove("server");
+      el.classList.add("client");
+      el.textContent = "client";
       console.log("Hello from DOMContentLoaded");
     });
     console.log("Hello from normal script");
@@ -24,19 +28,10 @@ const htmlString = `
 `;
 
 const Main = () => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    console.log("Hello from useEffect");
-  }, []);
-  
-  const handleClick = () => {
-    setCount((c) => c + 1);
-  };
-  
+  useEffect(() => console.log("Hello from useEffect"), []);
   return (
     <>
-      <button onClick={handleClick}>{count}</button>
+      <h1>Test</h1>
       <div dangerouslySetInnerHTML={{ __html: htmlString }} />
     </>
   );

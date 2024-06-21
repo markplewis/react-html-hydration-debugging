@@ -6,7 +6,6 @@ import type { UserConfig } from "vitest/config";
 const test = {
   globals: true,
   environment: "jsdom",
-  setupFiles: ["src/__tests__/setupTests.ts"],
   threads: false,
   watch: false,
 } as UserConfig["test"];
